@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0px;
+            padding: 0px;
+        }
+        body{
+            background-color: black;
+        }
+        .main{
+            display: flex;
+            justify-content: center;
+            margin-top: 4vh;
+        }
+        .maininner{
+            padding: 4vh;
+            width: 40%;
+            background-color: white;
+            border-radius: 4px;
+        }
+        #drop{
+            margin-top: 3vh;
+            width: 50%;
+            padding: 1vh;
+            border-radius: 4px;
+            background-color: white;
+        }
+        .colorvala{
+            width: 50%;
+            margin-top: 3vh;
+            margin-bottom: 3vh;
+            display: flex;
+            justify-content: space-between;
+        }
+        .box{
+            height: 30px;
+            width: 30px;
+            border-radius: 100%;
+        }
+        #red{
+            background-color: red;
+        }
+        #pink{
+            background-color: pink;
+        }
+        #aqua{
+            background-color: aqua;
+        }
+        #tomato{
+            background-color: tomato;
+        }
+        #purple{
+            background-color: purple;
+        }
+
+        .buttons{
+            width: 50%;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+        }
+        .buttons button{
+            padding: 1.7vh;
+            background-color: rgb(76, 230, 76);
+            border: 0px;
+            border-radius: 4px;
+        }
+    </style>
+</head>
+<body>
+    <!-- <input type="text" name="" id="inp">
+    <button type="submit" id="btn">submit</button> -->
+
+
+    <div class="main">
+        <div class="maininner">
+            <h1>Select Your Domain</h1>
+            <select name="" id="drop">
+                <option value="choice">--Make a Choice--</option>
+                <option value="react">React</option>
+                <option value="javascript">JavaScript</option>
+                <option value="html">HTML</option>
+                <option value="css">CSS</option>
+            </select>
+            <div class="colorvala">
+                <div class="box" id="red"></div>
+                <div class="box" id="pink"></div>
+                <div class="box" id="aqua"></div>
+                <div class="box" id="tomato"></div>
+                <div class="box" id="purple"></div>
+            </div>
+            <p id="para" style="margin-bottom: 3vh;"></p>
+            <div class="buttons">
+                <button id="small">Small</button>
+                <button id="cap">Capital</button>
+                <button id="inc">+</button>
+                <button id="dec">-</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // document.getElementById("btn").onclick = function(){
+        //     let a = document.getElementById("inp").value;
+        //     if((a>='a' && a<='z') || (a>='A' && a<='Z')){
+        //         console.log("char")
+        //     }
+        //     else if((a<=0) || (a>0)){
+        //         console.log("Number")
+        //     }
+        //     else{
+        //         console.log("Special Character")
+        //     }
+        // }
+
+
+        document.getElementById("drop").onclick = function(){
+            let a = document.getElementById("drop").value;
+
+            if(a=="choice"){
+                document.getElementById("para").innerText=""
+            }
+            else if(a=="react"){
+                document.getElementById("para").innerText="React is a framework that employs Webpack to automatically compile React, JSX, and ES6 code while handling CSS file prefixes. React is a JavaScript-based UI development library. Although React is a library rather than a language, it is widely used in web development. The library first appeared in May 2013 and is now one of the most commonly used frontend libraries for web development."
+            }
+            else if(a=="javascript"){
+                document.getElementById("para").innerText="JavaScript is a scripting or programming language that allows you to implement complex features on web pages — every time a web page does more than just sit there and display static information for you to look at — displaying timely content updates, interactive maps, animated 2D/3D graphics, scrolling video jukeboxes, etc. — you can bet that JavaScript is probably involved. It is the third layer of the layer cake of standard web technologies, two of which (HTML and CSS) we have covered in much more detail in other parts of the Learning Area."
+            }
+            else if(a=="html"){
+                document.getElementById("para").innerText="HTML is an acronym which stands for Hyper Text Markup Language which is used for creating web pages and web applications. Let's see what is meant by Hypertext Markup Language, and Web page."
+            }
+            else{
+                document.getElementById("para").innerText="CSS stands for Cascading Style Sheets. It is a style sheet language which is used to describe the look and formatting of a document written in markup language. It provides an additional feature to HTML. It is generally used with HTML to change the style of web pages and user interfaces. It can also be used with any kind of XML documents including plain XML, SVG and XUL.CSS is used along with HTML and JavaScript in most websites to create user interfaces for web applications and user interfaces for many mobile applications."
+            }
+        }
+
+        document.getElementById("red").onclick = function(){
+            document.body.style.backgroundColor = "red"
+        }
+        document.getElementById("pink").onclick = function(){
+            document.body.style.backgroundColor = "pink"
+        }
+        document.getElementById("aqua").onclick = function(){
+            document.body.style.backgroundColor = "aqua"
+        }
+        document.getElementById("tomato").onclick = function(){
+            document.body.style.backgroundColor = "tomato"
+        }
+        document.getElementById("purple").onclick = function(){
+            document.body.style.backgroundColor = "purple"
+        }
+
+        document.getElementById("small").onclick = function(){
+            document.getElementById("para").style.textTransform = "lowercase"
+        }
+        document.getElementById("cap").onclick = function(){
+            document.getElementById("para").style.textTransform = "uppercase"
+        }
+        let a = 16;
+        document.getElementById("inc").onclick = function(){
+            a++;
+            document.getElementById("para").style.fontSize = a+"px"
+        }
+        
+        let b= 16;
+        document.getElementById("dec").onclick = function(){
+            b--;
+            document.getElementById("para").style.fontSize = b+"px"
+        }
+    </script>
+</body>
+</html>

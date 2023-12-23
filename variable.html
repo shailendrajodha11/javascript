@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <script>
+        // ReDeclare and Reassign both are possible using var.....
+        // var is a global variable....
+        var id = 5;
+        var id =11;
+        id = 15
+        console.log(id);
+
+
+        // ReDeclare is Not possible while Reassign can be possibe using let...
+        // let is a local variable....
+        let no = 65;
+        // let no = 14;
+        no = 51
+        console.log(no);
+
+
+        // ReDeclare and Reassign both are not possible using const...
+        // const is a local variable...
+        const digit = 'Ram';
+        // const digit = 'Hari';
+        // digit = 'Narayan';
+        console.log(digit);
+
+
+        // var is a global Variable we can access var out of scope also...
+        {
+            var ro = 45;
+        }
+        console.log(ro)
+
+
+        // let is a local variable we can't access it out of scope it only works inside the scope...
+        {
+            var ko = 18;
+            console.log(ko)
+        }
+
+        // const is a local variable we can't access it out of scope it works inside the scope....
+        {
+            const lo = "Harry";
+            console.log(lo);
+        }
+
+
+        // Hosting is the process where a variable can be declared after it has been used it can be done in any of function of javascript and also used by var Variable but can't be used by let and hosting can't be done in let Variable....
+        add()
+        function add(){
+            console.log('Jai Shree Ram')
+        }
+
+        console.log(name);
+        var name=7;
+
+        console.log(sg=88)
+        var sg;
+
+        // console.log(as=99)
+        // let as;
+
+        // True or False :-
+        console.log(10>5)
+        console.log(5<=5)
+        console.log('5'==5)
+        console.log('5'===5)   
+        console.log('A'>'B')
+        console.log('a'<'b')
+        console.log('5'!=5)
+
+
+        let a=150, b=220, c=70, d=80;
+        if(a>b){
+            if(a>c){
+                if(a>d){
+                    console.log('a is greatest')
+                }
+            }
+        }
+        if(b>a){
+            if(b>c){
+                if(b>d){
+                    console.log('b is greatest')
+                }
+            }
+        }
+        if(c>a){
+            if(c>b){
+                if(c>d){
+                    console.log('c is greatest')
+                }
+            }
+        }
+        if(d>a){
+            if(d>b){
+                if(d>c){
+                    console.log('d is greatest')
+                }
+            }
+        }
+    </script>
+</body>
+</html>

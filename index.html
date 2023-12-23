@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body id="body">
+
+    <h1 id="h1">This is my heading Tag</h1>
+    <h1 id="time"></h1>
+    <button id="red">Red</button>
+    <button id="yellow">Yellow</button>
+    <button id="green">Green</button>
+    <button id="blue">Blue</button>
+    <button id="date">Date</button>
+    <button id="pop">Pop</button>
+
+    <script>
+
+        // console.log("Hello Java Script");
+        // alert("Hello Java Script");
+        // document.write("Hello Java Script");
+
+
+        document.getElementById("red").onclick = function() {
+            document.getElementById("h1").style.color = "red";
+            document.getElementById("body").style.backgroundColor = "black";
+        }
+
+        document.getElementById("yellow").onmouseover = function() {
+            document.getElementById("h1").style.color = "yellow";
+            document.getElementById("body").style.backgroundColor = "red";
+        }
+
+        document.getElementById("green").onmouseover = function() {
+            document.getElementById("h1").style.color = "green";
+            document.getElementById("body").style.backgroundColor = "yellow";
+        }
+
+        document.getElementById("blue").onclick = function() {
+            document.getElementById("h1").style.color = "blue";
+            document.getElementById("body").style.backgroundColor = "pink";
+        }
+
+        document.getElementById("date").onclick = function() {
+            document.getElementById("time").innerHtml = new Date();
+        }
+
+        document.getElementById("pop").onclick = function() {
+            alert("Hello Shailendra Singh Jodha !!!");
+        }
+    </script>
+</body>
+
+</html>

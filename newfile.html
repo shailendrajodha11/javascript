@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="text" id="inp1" class="inpu" placeholder="Username"> <br>
+    <input type="text" id="inp2" class="inpu" placeholder="Father's Name"> <br>
+    <input type="text" id="inp3" class="inpu" placeholder="Mother's Name"> <br>
+    <input type="text" id="inp4" class="inpu" placeholder="Job-Role"> <br>
+    <input type="text" id="inp5" class="inpu" placeholder="Gender"> <br>
+    <button id="but">submit</button>
+
+    <script>
+        // document.getElementById("but").onclick = function(){
+        //     let l = document.getElementsByClassName("inpu");
+        //     console.log(l.length);
+
+        //     // let a = document.getElementsByClassName("inpu")[3].value;
+        //     // console.log(a);
+
+        //     for(let i=0; i<l.length; i++){
+        //         // let a = document.getElementsByClassName("inpu")[i].value;
+        //         let a = l[i].value;
+        //         console.log(a); 
+        //     }
+
+        //     for(let i of l){
+        //         console.log(i.value)
+        //     }
+        // }
+
+        document.querySelector("#but").onclick = function(){
+            // let a = document.querySelector("input").value
+            // let a = document.querySelectorAll(".inpu")
+            let a = document.querySelectorAll("input")
+            // console.log(a)
+
+            // console.log(a)
+            for(let i of a){
+                console.log(i.value)
+            }
+
+        }
+    </script>
+</body>
+</html>
