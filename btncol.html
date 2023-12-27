@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .outer{
+            border: 2px solid black;
+            width: 60%;
+            padding: 2vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .box{
+            height: 11vh;
+            width: 9vw;
+            border: 2px solid black;
+            margin-left: 1vw;
+        }
+        .part1{
+            display: flex;
+        }
+    </style>
+</head>
+<body>
+    <div class="outer">
+        <div class="inpformat" style="margin-bottom: 9vh;">
+            <input type="text" placeholder="Color Name" id="inp1">
+            <input type="number" placeholder="Box Number" id="inp2">
+            <button id="btn">Submit</button>
+        </div>
+        <div class="colformat">
+            <div class="part1">
+                <div class="box" id="box1"></div>
+                <div class="box" id="box2"></div>
+                <div class="box" id="box3"></div>
+                <div class="box" id="box4"></div>
+            </div>
+            <div class="part1" style="margin-top: 2vh; margin-bottom: 9vh;">
+                <div class="box" id="box5"></div>
+                <div class="box" id="box6"></div>
+                <div class="box" id="box7"></div>
+                <div class="box" id="box8"></div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        document.getElementById("btn").onclick = function(){
+            let a = document.getElementById("inp1").value
+            let b = document.getElementById("inp2").value
+
+            if(b==1){
+                document.getElementById("box1").style.background = a;
+            }
+            else if(b==2){
+                document.getElementById("box2").style.background = a;
+            }
+            else if(b==3){
+                document.getElementById("box3").style.background = a;
+            }
+            else if(b==4){
+                document.getElementById("box4").style.background = a;
+            }
+            else if(b==5){
+                document.getElementById("box5").style.background = a;
+            }
+            else if(b==6){
+                document.getElementById("box6").style.background = a;
+            }
+            else if(b==7){
+                document.getElementById("box7").style.background = a;
+            }
+            else if(b==8){
+                document.getElementById("box8").style.background = a;
+            }
+        }
+
+        // document.getElementById("btn").onclick = function(){
+        //     let name = document.getElementById("inp1").value
+        //     let number = document.getElementById("inp2").value
+
+            
+        // }
+    </script>
+</body>
+</html>
