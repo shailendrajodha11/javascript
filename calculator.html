@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator</title>
+    <style>
+        .body{
+            display: flex;
+            justify-content: center;
+        }
+        .outer{
+            width: 22%;
+            align-content: center;
+            background-color: black;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 2vh;
+            border-radius: 5px;
+        }
+        #inpu1{
+            margin-top: 3vh;
+            width: 80%;
+            border: 0px;
+            padding: 2vh 3vh;
+            background-color: rgb(255, 255, 255);
+            border-radius: 3px;
+            text-align: right;
+        }
+        .lower{
+            color: white;
+            width: 100%;
+            margin-top: 3vh;
+            margin-bottom: 1vh;
+        }
+        .line1{
+            /* color: white; */
+            width: 100%;
+            display: flex;
+            justify-content: space-around;
+            margin-top: 2.5vh;
+        }
+        .operate{
+            height: 6vh;
+            width: 3.7vw;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: black;
+            font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif ;
+            background-color: gray;
+            border-radius: 100%;
+        }
+        .no{
+            height: 6vh;
+            width: 3.7vw;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: white;
+            font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif ;
+            background-color: rgb(63, 63, 63);
+            border-radius: 100%;
+        }
+        .sign{
+            height: 6vh;
+            width: 3.7vw;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: white;
+            font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif ;
+            background-color: rgb(230, 154, 14);
+            font-weight: 900;
+            font-size: 125%;
+            border-radius: 100%;
+        }
+    </style>
+</head>
+<body class="body">
+    <div class="outer">
+        <!-- <div class="heading"><p>Welcome to Calculator</p></div> -->
+        <input type="text" placeholder="0" id="inpu1">
+        <div class="lower">
+            <div class="line1">
+                <button class="operate">Ac</button>
+                <button class="operate">Del</button>
+                <button class="operate">%</button>
+                <button class="sign" id="divide">/</button>
+            </div>
+            <div class="line1">
+                <button class="no">7</button>
+                <button class="no">8</button>
+                <button class="no">9</button>
+                <button class="sign" id="mul">*</button>
+            </div>
+            <div class="line1">
+                <button class="no">4</button>
+                <button class="no">5</button>
+                <button class="no">6</button>
+                <button class="sign" id="sub">-</button>
+            </div>
+            <div class="line1">
+                <button class="no">1</button>
+                <button class="no">2</button>
+                <button class="no">3</button>
+                <button class="sign" id="add">+</button>
+            </div>
+            <div class="line1" style="margin-bottom: 2vh;">
+                <button class="no">0</button>
+                <button class="no">00</button>
+                <button class="no">.</button>
+                <button class="sign" id="ans">=</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        let a = document.querySelectorAll("button")
+        for(let i of a){
+            i.onclick = function(){
+                // console.log(i.innerText)
+                let b = i.innerText
+               
+                if(i.innerText=="="){
+                    let c = document.querySelector("input").value
+                    document.querySelector("input").value = eval(c)
+                }
+                else if(i.innerText=="Ac"){
+                    document.querySelector("input").value = ""
+                }
+                else if(i.innerText=="Del"){
+                    // document.querySelector("input").value = document.querySelector("input").value.slice(0,-1)
+                    let val = document.querySelector("input").value
+                    document.querySelector("input").value = val.slice(0,-1)
+                }
+                else{
+                    document.querySelector("input").value+=b
+                    // value = value + i.innerText
+                }
+            }
+        }
+    </script>
+</body>
+</html>
