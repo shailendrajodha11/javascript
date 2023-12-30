@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="main">
+        <input type="text" placeholder="First Value" id="inp1">
+        <input type="text" placeholder="Second Value" id="inp2">
+        <select name="" id="operation">
+            <option value="none">None</option>
+            <option value="add">Add</option>
+            <option value="sub">Sub</option>
+            <option value="mul">Mul</option>
+            <option value="divide">Divide</option>
+        </select>
+    </div>
+
+    <script>
+        document.querySelector("#operation").onclick = function(){
+            let n1 = document.querySelector("#inp1").value
+            let n2 = document.querySelector("#inp2").value
+            let ope = document.querySelector("#operation").value
+
+            if(ope == "add"){
+                let c = n1+n2
+                console.log(c)
+            }
+            else if(ope == "sub"){
+                let c = n1-n2
+                console.log(c)
+            }
+            else if(ope == "mul"){
+                let c = n1*n2
+                console.log(c)
+            }
+            else if(ope == "divide"){
+                let c = n1/n2
+                console.log(c)
+            }
+        }
+    </script>
+</body>
+</html>
