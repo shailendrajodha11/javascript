@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>String in JS</title>
+</head>
+<body>
+    <script>
+        //  Template Literals:----------------------
+        let sentence = `My name is Shailendra`
+        console.log(sentence)
+
+
+
+        // String Interpolation in Template Literals:------------
+        let name1 = "shailendra";
+        let sentence2 = `I am ${name1}`;
+        console.log(sentence2);
+
+        let boy1 = "Ram"
+        let boy2 = "Shyam"
+        let sentence3 = `${boy1} is friend of ${boy2}`
+        console.log(sentence3)
+
+
+
+        // Escape Sequence Character:-------------------
+        let name2 = 'John D\'Doe';
+        console.log(name2)
+
+        let fruit1 = "Bana\"na"
+        console.log(fruit1)
+
+        let game = 'polo\nhockey'
+        console.log(game)
+
+        let fullname = 'virat\tkohli'
+        console.log(fullname)
+
+        let any = 'ram\rshri'
+        console.log(any)
+
+
+
+        // String Methods and Functions:------------------------
+        let name = "Shailendra"
+        console.log(name.length)
+        console.log(name.toUpperCase())
+        console.log(name.toLowerCase())
+        console.log(name.slice(2,6))
+        console.log(name.slice(2))
+        console.log(name.replace("Shail", "Dev"))
+        console.log(name.concat(" is a very good and a great person ", name , " is also a kind-hearted person"))
+        
+        let name3 = "       ramesh     "
+        console.log(name3.trim())
+        // And many more do google search..
+
+
+        let fruit = "Strawbery"
+        for(let i=0; i<fruit.length; i++){
+            console.log(fruit[i]);
+        }
+    </script>
+</body>
+</html>
