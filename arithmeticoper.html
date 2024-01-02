@@ -21,7 +21,9 @@
     <script>
         document.querySelector("#operation").onclick = function(){
             let n1 = document.querySelector("#inp1").value
+            n1 = Number.parseInt(n1)
             let n2 = document.querySelector("#inp2").value
+            n2 = Number.parseInt(n2)
             let ope = document.querySelector("#operation").value
 
             if(ope == "add"){
