@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Digital Clock</title>
+    <style>
+        * {
+            margin: 0px;
+            padding: 0px;
+        }
+
+        body {
+            background-color: #10101E;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .main {
+            width: 70%;
+            /* border: 2px solid white; */
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            color: white;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .info {
+            width: 70%;
+            text-align: right;
+        }
+
+        .head h1 {
+            font-size: 11vh;
+        }
+
+        .info h1 {
+            font-size: 3vh;
+        }
+
+        .clobox {
+            background-color: rgb(22, 177, 238);
+            width: 50%;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-around;
+            align-items: center;
+            margin-top: 5vh;
+            border-radius: 7px;
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            box-shadow: 2px 2px 11px skyblue;
+            box-sizing: border-box;
+        }
+
+        .ddate {
+            margin-top: 3vh;
+            margin-bottom: 1vh;
+            font-size: 120%;
+        }
+
+        .time {
+            /* margin-top: 4vh; */
+            margin-bottom: 3vh;
+            font-size: 450%;
+            font-weight: 600;
+        }
+
+        .visual {
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            margin-bottom: 6vh;
+            border: 2px solid yellow;
+        }
+
+        .visual {
+            position: absolute;
+            top: 5vh;
+            right: 5vw;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="visual" id="mode1">
+        <select name="mode" id="mode" style="padding: 1vh 1vw;">
+            <option value="red">Red</option>
+            <option value="light">Light</option>
+            <option value="grass">Grass</option>
+            <option value="dark">Dark</option>
+        </select>
+    </div>
+    <div class="main">
+        <div class="head" id="head1">
+            <h1>DIGITAL CLOCK</h1>
+        </div>
+        <div class="info" id="info1">
+            <h1>HTML, CSS & JAVASCRIPT</h1>
+        </div>
+
+        <div class="clobox">
+            <div class="ddate" id="date"></div>
+            <div class="time" id="time"></div>
+        </div>
+    </div>
+
+    <script>
+        setInterval((a) => {
+            let time = new Date();
+            let hour = time.getHours();
+            let min = time.getMinutes();
+            let sec = time.getSeconds();
+            let date = time.getDate();
+            let month = time.getMonth();
+            let year = time.getFullYear();
+            let day = time.getDay();
+
+            let week = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday']
+
+            if (hour == 0) {
+                hour = 12;
+            }
+            if (min < 10) {
+                min = "0" + min
+            }
+            if (sec < 10) {
+                sec = "0" + sec
+            }
+            if (hour > 12) {
+                hour -= 12;
+            }
+            if (hour < 10) {
+                hour = "0" + hour
+            }
+            if (date < 10) {
+                date = "0" + date
+            }
+            month = month + 1
+            if (month < 10) {
+                month = "0" + month
+            }
+            let currentTime = hour + ":" + min + ":" + sec
+            document.querySelector("#time").innerHTML = currentTime
+
+            let currentDate = week[day] + " , " + date + "-" + month + "-" + year
+            document.querySelector("#date").innerHTML = currentDate
+        }, 10);
+
+
+        document.querySelector("#mode").onclick = function () {
+            let a = document.querySelector("#mode").value
+
+            if (a == "red") {
+                document.body.style.backgroundColor = "red"
+                document.querySelector("#head1").style.color = "white"
+                document.querySelector("#info1").style.color = "white"
+            }
+            else if (a == "light") {
+                document.body.style.backgroundColor = "white"
+                document.querySelector("#head1").style.color = "black"
+                document.querySelector("#info1").style.color = "black"
+            }
+            else if (a == "dark") {
+                document.body.style.backgroundColor = "#10101E"
+                document.querySelector("#head1").style.color = "white"
+                document.querySelector("#info1").style.color = "white"
+            }
+            else if (a == "grass") {
+                document.body.style.backgroundColor = "green"
+                document.querySelector("#head1").style.color = "white"
+                document.querySelector("#info1").style.color = "white"
+            }
+        }
+    </script>
+</body>
+
+</html>
