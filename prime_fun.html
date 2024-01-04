@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prime or Not Using JS</title>
+</head>
+<body>
+
+    <script>
+        let a = prompt("enter the value of a")
+        console.log(a)
+        
+        // if(a%2!=0 && a%3!=0 && a%5!=0 && a%7!=0 && a%a==0){
+        //     console.log("a is prime number")
+        // }
+        // else{
+        //     console.log("a is not a prime number")
+        // }
+
+        for(let i=2; i<=a; i++){
+            if(a%i==0 && i!=a){
+                console.log("a is not a prime number")
+                break
+            }
+            else if(a%i==0 && i==a){
+                console.log("a is a prime number")
+            }
+        }
+    </script>
+</body>
+</html>
