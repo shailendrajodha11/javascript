@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <input type="text" placeholder="Number to check Armstrong or not">
+    <button>Submit</button>
+    <script>
+
+        // 1).   Number is Odd or Even:-----------------------------------
+        // let x = (no)=>{
+        //     if(no%2==0){
+        //         console.log("No is even")
+        //     }
+        //     else{
+        //         console.log("No is odd")
+        //     }
+        // }
+
+        // let b = prompt("Enter the value of b")
+        // console.log(b)
+        // x(b)
+
+
+        // 2).    Palindrome or Not:--------------------------------
+        // let palin = (a)=>{
+        //     for(let i=0, j=a.length-1; i<a.length/2 && j>a.length/2; i++,j--){
+        //         if(a[i] == a[j]){
+        //             console.log("no is palindrome")
+        //         }
+        //         else{
+        //             console.log("No is not a palindrome")
+        //             break
+        //         }
+        //     }
+        // }
+        // let a = "121"
+        // palin("121")
+
+        // 3).    Armstrong or Not:------------------------------
+        document.querySelector("button").onclick = function () {
+            let a = document.querySelector("input").value
+            console.log(a)
+        }
+        let n = prompt("Enter the value of number")
+        console.log(n)
+    </script>
+</body>
+
+</html>
