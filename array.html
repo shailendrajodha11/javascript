@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Arrays in JS</title>
+</head>
+
+<body>
+    <!-- <input type="text" id="inp">
+    <button id="btn">Submit</button> -->
+
+    <input type="text" id="inp1">
+    <button id="addarr">Add to Array</button>
+    <button id="priarr">Print Array</button>
+    <p></p>
+
+    <script>
+        // let x = [1,2,3,4,5,"sahilendra",true,11.5]
+        // console.log(x)
+        // for(let i of x){
+        //     console.log(i)
+        // }
+
+        // x.forEach((element)=>{
+        //     console.log(element)
+        // })
+
+        // let y = [100, 63, 44, 78, 96, 52]
+
+        // let sum = 0;
+        // let maxi = 0;
+        // let sec_max = 0
+        // let mini = 101;
+        // let sec_mini = 101;
+
+        // for(let i=0; i<y.length; i++){
+        //Sum Of Complete Array:---------------------------
+        // sum += y[i]
+
+        // Maximum of an Array:-----------------------
+        // if(y[i]>maxi){
+        //     maxi = y[i]
+        // }
+        // Second maximum of an Array:------------------------------
+        // else if(y[i]>sec_max && y[i]<maxi){
+        //     sec_max = y[i]
+        // }
+
+        // Minimum of an Array:-------------------------
+        // if(y[i]<mini){
+        //     mini = y[i]
+        // }
+        // Second minimum of an Array:---------------------------
+        // else if(y[i]<sec_mini && y[i]>mini){
+        //     sec_mini = y[i]
+        // }
+        // }
+
+        // console.log(sum)
+        // console.log(maxi)
+        // console.log(mini)
+        // console.log(sec_max)
+        // console.log(sec_mini)
+
+        // document.querySelector("#btn").onclick = function () {
+        //     let a = document.getElementById("inp").value
+        //     console.log(a)
+        //     for (let i = 0; i < y.length; i++) {
+        //         if (a == y[i]) {
+        //             console.log(true)
+        //         }
+        //     }
+        // }
+
+
+            let a = [10,20,30,40,50]
+            let last = a.pop()
+            let first = a.shift()
+            a.unshift(last)
+            a.push(first)
+            console.log(a)
+
+            let b = [1,2,3,4,5]
+            // Push method in Array:--------------------
+            b.push(200)
+            b.push("shailendra")
+            console.log(b)
+            // Pop method in Array:---------------------
+            b.pop()
+            b.pop()
+            console.log(b)
+            // Shift method in Array:--------------------
+            b.shift()
+            b.shift()
+            console.log(b)
+            // Unshift method in Array:-----------------------
+            b.unshift("Ram")
+            b.unshift("Shyam")
+            console.log(b)
+
+            // Insert Element to array using input and button tag:----------------
+            // let arr = []
+            // document.querySelector("#btn").onclick = function(){
+            //     let element = document.querySelector("#inp").value
+            //     arr.push(element)
+            //     // console.log(arr)
+            // }
+
+
+
+            let array = []
+            document.querySelector("#addarr").onclick = function(){
+                let name = document.querySelector("#inp1").value
+                document.querySelector("#inp1").value = ""
+                document.querySelector("#inp1").focus()
+                array.push(name)
+            }
+
+            document.querySelector("#priarr").onclick = function(){
+                let i = 0;
+                setInterval(() => {
+                    if(i==array.length){
+                        clearInterval()
+                    }
+                    else{
+                        // console.log(array[i],",")
+                        document.querySelector('p').innerHTML += `${array[i]} , `
+                        // if(i==array.length - 1){
+                        //     document.querySelector('p').innerHTML += `${array[i]}`
+                        //     i = i+1
+                        // }
+                        i=i+1;
+                    }
+                }, 1000);
+            }
+    </script>
+</body>
+
+</html>
