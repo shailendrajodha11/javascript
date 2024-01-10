@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Map in Array:-</title>
+</head>
+<body>
+    <script>
+
+        // Map in Array in JS:--------------------------------------
+        let a = [10,20,30,40,50]
+        
+        let b = a.map(function(item){
+            return item*3;
+        })
+        console.log(b)
+
+        let c = a.map(function(value,index){
+            return value+index
+        })
+        console.log(c)
+
+        let d = a.map(function(v,i,arr){
+            return v+i+arr
+        })
+        console.log(d)
+
+
+        // Odd and Even of an element of an Array:-------------------------
+        let m = [1,2,3,4,5,6]
+        let n = m.map(function(ele){
+            if(ele%2!=0){
+                return "odd";
+            }
+            else{
+                return "even";
+            }
+        })
+        console.log(n)
+
+        // Typeof element of an Array:---------------------------------
+        let r = ["ram", -1, 2, -6, true, "shyam"]
+        let s = r.map(function(it){
+            return typeof(it)
+        })
+        console.log(s)
+
+
+        // Typeof Of Symbol-> Symbol is built-in function if we use this function 'Symbol' then only we got typeof symbol:--------------------
+        let x = Symbol("ramesh")
+        console.log(typeof(x))
+
+        // Objects in JS:--------------------
+        let mas = {
+            ram : 1,
+            shyam : 2,
+            haresh : 3,
+            sumuksh : 4
+        }
+        console.log(mas)
+        console.log(typeof(mas))
+
+        let nu = null
+        console.log(typeof(nu))
+
+
+        // Filter from an Array in JAVASCRIPT:-------------------------------
+        let an = [10,20,30,40,50,51,60,70,80,90,100]
+        let fil = an.filter(function(item){
+            return item>50
+        })
+        console.log(fil)
+
+        
+        let kapde = ['tshirt', 'pant', 'jacket', 'upper', 'lower', true, 'hoodie', 1,2,3, null, "undergarment", undefined]
+        let kapret = kapde.filter(function(element){
+            return (typeof(element)=="string")
+        })
+        console.log(kapret)
+
+
+        // Reduce an Array into 1 Value using Reduce Method in JS:--------------------------
+        let re = [1,2,3,4,5,6,7,8]
+        let rere = re.reduce((x,y)=>{
+            return x+y;
+        })
+        console.log(rere)
+
+        let res = [6,9,2,11,8,3,4]
+        let resret = res.reduce((x,y)=>{
+            if(x>y){
+                return x;
+            }
+            else{
+                return y;
+            }
+        })
+        console.log(resret)
+    </script>
+</body>
+</html>
