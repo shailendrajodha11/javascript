@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Slice & Splice in JS</title>
+</head>
+<body>
+    
+    <script>
+        // Slice Method in Array:----------------------------------
+        // Slice Method is used to store & print element of an Array from an given range to ending range
+        // Returns New Array.
+        let a = [10,20,30,40,50,60,70]
+        console.log(a)
+        console.log(a.slice(2,5))
+        console.log(a.slice(2))
+        console.log(a.slice(-1))
+        console.log(a.slice(0,-1))
+        console.log(a.slice(-3))
+        console.log(a.slice(-4,-2))
+        console.log(a.slice(0,-1))
+
+        let b = a.slice(3,5)
+        console.log(b)
+
+
+        // Splice Method in Array:-------------------------------------
+        // It is used to change the contents of an array by removing or replacing existing
+        // Format of Splice : ---- a.splice(indexing from deleting, Number of ele. to delete, Ele to add)
+        let c = [11,22,33,44,55,66,77,88]
+        c.splice(1,4,"ram",true,undefined,3)
+        console.log(c)
+        // Not return New Array. Modify the Origina Array.
+        console.log(c.splice(2,4,"shailendra"))
+        console.log(c)
+
+        let d = c.splice(1,2)
+        console.log(d)
+        console.log(c)
+
+        let n = [10,20,30,40,50,60,70,80,90,100]
+        n.splice(0,5)
+        console.log(n)
+
+
+
+        // Split Method :--------> This is used to convert String to an Array:--------------------
+        let s = "shailendra,khemu,inder,mohit,kavita"
+        console.log(s.split(","))
+        let sn = s.split(",")
+        console.log(typeof(sn))
+
+        
+        // Join Method in Array :------------> This is used to convert Array to an String
+        console.log(s.join(","))
+        console.log(s.join("&"))
+
+        // flat() Method in Array :----------> This is used to convert multi-dimensional array to 1-d array:------------------------ 
+        let e = [1,2,3,[5,6,7],2,65,8]
+        console.log(e.flat())
+
+        let f = [1,2,3,4,5,[3,5,6,[3,5,[2,3],4,7,9],21,56],35, ["shailendra"]]
+        console.log(f.flat(3))
+    </script>
+</body>
+</html>
