@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Objects in JS</title>
+</head>
+
+<body>
+
+
+    <script>
+        let obj1 = {
+            Name: "Aman",
+            Age: 21,
+            Address: "Jaipur",
+            PinCode: 302012
+        };
+
+        // Only for-in loop used in Objects:-----------------
+        for (let i in obj1) {
+            console.log(obj1[i]);
+        }
+
+        console.log(obj1.Name, obj1.Age, obj1.Address, obj1.PinCode)
+
+
+        const obj2 = {
+            name: "Ram",
+            age: 21,
+            address: "Udaipur",
+            pincode: 302020
+        };
+        // Bahar Key ki Value change krna:-----
+        obj2.name = "Shyam"
+        // Bahar Ek or Key & Value add krna:------
+        obj2['number'] = 45
+        console.log(obj2)
+        console.log(obj2.name, obj2.age, obj2.address, obj2.pincode)
+
+
+        let arr = [
+            {
+                name: "ram",
+                age: 21,
+                address: "jaipur"
+            },
+            {
+                name: "shyam",
+                age: 11,
+                address: "udaipur"
+            },
+            {
+                name: "hari",
+                age: 10,
+                address: "jodhpur"
+            }
+        ]
+
+        for (let i of arr) {
+            // for(let j in i){
+            //     console.log(i[j])
+            // }
+            console.log(i.name, i.age, i.address)
+        }
+
+        let ret = arr.map(function (item) {
+            console.log(item.name, item.age, item.address)
+        })
+
+
+        let car = [
+            {
+                Name: "Mustang",
+                Model: 1960,
+                Build_at: "USA"
+            },
+            {
+                Name: "Ferrari",
+                Model: 2000,
+                Build_at: "Canada"
+            },
+            {
+                Name: "Mercerdies",
+                Model: 1980,
+                Build_at: "Germany"
+            },
+            {
+                Name: "BMW",
+                Model: 2010,
+                Build_at: "France"
+            },
+            {
+                Name: "Supra",
+                Model: 2020,
+                Build_at: "Japan"
+            },
+            {
+                Name: "Ford",
+                Model: 1970,
+                Build_at: "Germany"
+            },
+        ]
+        let fil = car.filter(function(item){
+            return item.Model > 1990
+        })
+
+        console.log(fil)
+
+
+        const myObj = {
+            name : "Shailendra",
+            age : 21,
+            cars : [
+                {name:"Ford", models:["Fiesta", "Focus", "Mustang"]},
+                {name:"BMW", models:["320","X3","X5"]},
+                {name:"Fiat", models:["500","Panda"]}
+            ]
+        }
+
+        // console.log(myObj.cars)
+
+        let filt = myObj.cars.filter(function(item){
+            return item.name == "BMW";
+        })
+        console.log(filt)
+
+        // console.log(filt.models)
+        let mapret = filt.map(function(item){
+            console.log(item.models)
+            return item.models
+        })
+        // console.log(mapret)
+        // let ram = mapret.map(function(item){
+        //     console.log(item)
+        // })
+    </script>
+</body>
+
+</html>
