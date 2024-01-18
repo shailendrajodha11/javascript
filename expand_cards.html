@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Project-1</title>
+
+    <style>
+        * {
+            margin: 0px;
+            padding: 0px;
+            box-sizing: border-box;
+        }
+
+        .container {
+            margin-top: 7vh;
+            display: flex;
+            justify-content: center;
+            width: 100vw;
+        }
+
+        .img {
+            height: 40vh;
+            /* width: 40vw; */
+            width: 12%;
+            background-position: center;
+            /* background-repeat: no-repeat; */
+            background-position: center;
+            /* background-size: auto 100%; */
+            border-radius: 11px;
+            margin: 0.5vw;
+            display: flex;
+            justify-content: center;
+            align-items: end;
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            /* flex: 0.1; */
+        }
+
+        /* .img:hover{
+            width: 50%;
+        } */
+        /* .img.rare {
+            flex: .7;
+        } */
+    </style>
+</head>
+
+<body>
+    <h1 style="margin-top: 2vh;">This is the Expanding Cards</h1>
+    <div class="container">
+        <div class="img rare" style="background-image: url('i1.jpeg');">
+            <h2 style="color: white;">Flow</h2>
+        </div>
+        <div class="img " style="background-image: url('i2.jpeg');">
+            <h2 style="color: white;">Night</h2>
+        </div>
+        <div class="img " style="background-image: url('i3.jpeg');">
+            <h2 style="color: white;">Beach</h2>
+        </div>
+        <div class="img " style="background-image: url('i4.jpeg');">
+            <h2 style="color: white;">Desert</h2>
+        </div>
+        <div class="img " style="background-image: url('i5.jpeg');">
+            <h2 style="color: white;">Paint</h2>
+        </div>
+    </div>
+
+
+    <script>
+        let cards = document.querySelectorAll(".img");
+        console.log(cards)
+        for (let i = 0; i < cards.length; i++) {
+            cards[i].style.width = "100px"
+            cards[i].onmouseover = function () {
+                cards[i].style.width = "58%";
+                cards[i].style.transition = "all 2s"
+            }
+            cards[i].onmouseout = function(){
+                cards[i].style.width = "100px";
+                cards[i].style.transition = "all 2s"
+            }
+        }
+    </script>
+</body>
+
+</html>
