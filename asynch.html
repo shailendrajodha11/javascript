@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+
+    //    console.log("Monday")
+    //    console.log("Tuesday")
+    //    console.log("Wednesday")
+    //    setTimeout(()=>{
+    //      console.log("Thursday")
+    //    },10000)
+    //    console.log("Friday")
+    //    console.log("Saturday")
+
+
+    // function outer(){
+
+
+    //     let a = "Mohit Sharma";
+    //     function inner(){
+
+    //         console.log(a)
+    //     }
+
+    //     return inner
+    // }
+
+    // let ans = outer()
+    // ans()
+
+
+    // function output(i){
+
+    //     i()
+    // }
+
+    // function index(){
+
+    //     console.log("Hello Java Script")
+    // }
+
+    // output(()=>{
+    //     console.log("Hello Java Script")
+    // })
+
+
+    // function Output(a,b,sum){
+
+    //     sum(a,b)
+    // }
+
+    // function sum(x,y){
+    //      console.log(x+y)
+    // }
+
+
+    // Output(10,20,sum)
+
+
+
+    // function Party(dishes,order){
+
+    //     setTimeout(()=>{
+
+    //         console.log(dishes)
+    //         if(order){
+
+    //             order()
+    //         }
+
+    //     },3000)
+
+    // }
+
+    // Party("Pizza");
+    // Party("Burger");
+    // Party("patties");
+
+    // Party("Pizza",()=>{
+    //     console.log("Burger aa rha h....")
+    //     Party("Burger",()=>{
+    //         console.log("Pattirs aa rhi h")
+    //         Party("Patties",()=>{
+    //             console.log("Cold drink aa rhi h ....")
+    //             Party("Cold Drink")
+    //         })
+    //     })
+    // })
+
+    let prom = new Promise((resolve, reject) => {
+
+      if (false) {
+
+        resolve("Data")
+      }
+
+      else {
+
+        reject("error")
+      }
+
+
+    })
+
+    prom.then((result) => {
+      console.log(result)
+    }).catch((error) => {
+      console.log(error)
+    })
+
+
+
+  </script>
+</body>
+
+</html>

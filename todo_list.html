@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ToDo</title>
+
+    <style>
+        * {
+            /* margin: 0px;
+            padding: 0px; */
+            box-sizing: border-box;
+        }
+
+        h1 {
+            text-align: center;
+            background-color: black;
+            color: white;
+            padding: 2vh 0;
+        }
+
+        body {
+            background-color: plum;
+            /* padding: 2vh; */
+        }
+
+        h3 {
+            margin: 2vh 2vw;
+        }
+
+        input {
+            margin: 0 0 0 2vw;
+            padding: 1vh 2vw;
+        }
+
+        button {
+            padding: 1vh 1vw;
+        }
+    </style>
+</head>
+
+<body>
+    <h1><i>My Todo List</i></h1>
+    <h3><u>Add Items in My Todo List:-</u></h3>
+    <input type="text"  autofocus placeholder="Enter Item :-">
+    <button id="submit">ADD</button>
+    <ul id="ul" style="margin: 10"></ul>
+
+    <script>
+        document.getElementById("submit").onclick = function () {
+            let val = document.querySelector("input").value;
+            document.querySelector("input").value = ""
+            document.querySelector("input").focus()
+            document.getElementById("ul").innerHTML += `<div class="container">
+                                                                <li >${val}</li>
+                                                                <button class="complete">complete</button>
+                                                                <button class="delete" style= "margin-left : 10px">delete</button>
+                                                                </div>`
+
+            let z = document.querySelectorAll(".container");
+            // console.log(z);
+
+            let b = document.querySelectorAll(".complete");
+            let c = document.querySelectorAll("li");
+            b.forEach((e, i) => {
+                e.onclick = function () {
+                    let a = c[i].innerText;
+                    // c[i].innerHTML = <li ><del> ${a}</del></li>;
+                    c[i].style.cssText = "text-decoration:line-through"
+                };
+            });
+
+            let d = document.querySelectorAll(".delete");
+           
+            d.forEach((e, i) => {
+                e.onclick = function () {
+                    // z[i].innerHTML = "";
+                   z[i].remove();
+                
+                    console.log(e,i)
+                };
+            });
+        };
+        
+    </script>
+</body>
+
+</html>

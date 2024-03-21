@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <script>
+        // Call-back function:---------
+        function sum(a,b){
+            console.log(a+b)
+        }
+        function Output(a,b,sum){
+            sum(a,b)
+        }
+        Output(10,20,sum)
+
+        // function Output(a,b,sum){
+        //     sum(a,b)
+        // }
+        // Output(10,20,sum(x,y){
+        //     console.log(x+y)
+        // })
+
+
+        // Promise:---------
+        let prom = new Promise((resolve, reject)=>{
+            if(true){
+                resolve("Shailendra")
+            }
+            else{
+                reject("error")
+            }
+        })
+
+        prom.then((result)=>{
+            console.log(result)
+        }).catch((error)=>{
+            console.log(error)
+        })
+
+        //setTimeout Function in JS:----------------
+        setTimeout(()=>{
+            console.log("me hi hu")
+        },1000)
+
+        // setInterval Function in JS:---------------- 
+        // setInterval(()=>{
+        //     document.write("hello")
+        // },1000)
+
+
+        //Closure in JS:------------
+        function output(){
+            let name="Thik h fir"
+            function inner(){
+                console.log(name)
+            }
+            return inner
+        }
+        let ans = output()
+        ans()
+        console.log(ans)
+
+
+        //Call-back Functions in JS:----------------
+        function outer(functin(x,y){
+            console.log(x+","+y);
+        })
+    </script>
+</body>
+</html>

@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>To-Do List</title>
+
+    <style>
+        * {
+            /* margin: 0px;
+            padding: 0px; */
+            box-sizing: border-box;
+        }
+
+        h1 {
+            text-align: center;
+            background-color: black;
+            color: white;
+            padding: 2vh 0;
+        }
+
+        body {
+            background-color: plum;
+            /* padding: 2vh; */
+        }
+
+        h3 {
+            margin: 2vh 2vw;
+        }
+
+        input {
+            margin: 0 0 0 2vw;
+            padding: 1vh 2vw;
+        }
+
+        button {
+            padding: 1vh 1vw;
+        }
+    </style>
+</head>
+
+<body>
+    <h1><i>My Todo List</i></h1>
+    <h3><u>Add Items in My Todo List:-</u></h3>
+    <input type="text" autofocus placeholder="Enter Item :-">
+    <button>ADD</button>
+    <ul id="ul"></ul>
+
+
+    <script>
+        let o
+        let d
+        document.querySelector("button").onclick = function () {
+            let store = document.querySelector("input").value
+            // console.log(store)
+            document.querySelector("input").value = ""
+            document.querySelector("input").focus()
+            document.querySelector("#ul").innerHTML += `<li> ${store} </li>
+                                                        <button class="comp">Complete Button</button>
+                                                        <button class="del">Delete Button</button>`
+
+            o = document.querySelector(".comp")
+            d = document.querySelector(".del")
+            console.log(o)
+            console.log(d)
+
+            o.forEach(e,i => {
+                e.onclick = function(){
+                    e.body.style.backgroundColor = "black"
+                }
+            });
+        }
+
+
+    </script>
+</body>
+
+</html>

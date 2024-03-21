@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>StopWatch Using HTML,CSS,JS</title>
+    <style>
+        *{
+            margin: 0px;
+            padding: 0px;
+        }
+        body{
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+        .outer{
+            width: 30%;
+            background-color: white;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            box-shadow: 2px 2px 7px black;
+            border-radius: 5px;
+        }
+        .upper {
+            margin-top: 6vh;
+            width: 90%;
+            height: 11vh;
+            border-radius: 5px;
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            background-color: rgb(255, 255, 255);
+            color: rgb(5, 5, 238);
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-size: 220%;
+            font-weight: 300;
+            box-shadow: 2px 2px 7px black;
+        }
+        .buttons{
+            width: 90%;
+            margin-top: 3vh;
+            margin-bottom: 6vh;
+            display: flex;
+            justify-content: space-around;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        .btn{
+            padding: 1.4vh 2vw;
+            border: 0px;
+            border-radius: 3px;
+            font-weight: 600;
+            color: black;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="outer">
+        <div class="upper">
+            <!-- <div class="hr">
+                <span id="hr1">0</span><span id="hr2">0</span>
+            </div>
+            <div class="colon">:</div>
+            <div class="min">
+                <span id="min1">0</span><span id="min2">0</span>
+            </div>
+            <div class="colon">:</div>
+            <div class="sec">
+                <span id="sec1">0</span><span id="sec2">0</span>
+            </div> -->
+            <div class="display">00 : 00 : 00: 00</div>
+        </div>
+        <div class="buttons">
+            <button id="stop" class="btn" style="background-color: rgb(123, 240, 158);">Stop</button>
+            <button id="start" class="btn" style="background-color: rgb(122, 219, 223);">Start</button>
+            <button id="reset" class="btn" style="background-color: rgb(248, 132, 132);">Reset</button>
+        </div>
+    </div>
+
+
+    <script>
+        // setInterval((a) => {
+        //     document.write("Shailedra")
+        // }, 1000);
+
+        let display = document.querySelector(".display");
+        let stop = document.querySelector("#stop");
+        let start = document.querySelector("#start");
+        let reset = document.querySelector("#reset");
+
+        let msec = 0;
+        let sec = 0;
+        let min = 0;
+        let hr = 0;
+
+        let timerId = null;
+
+        function startTimer(){
+            msec++;
+            if(msec == 100){
+                msec = 0;
+                sec++;
+                if(sec == 60){
+                    sec = 0; 
+                    min++;
+                    if(min == 60){
+                        min = 0;
+                        hr++;
+                    }
+                }
+            }
+        }
+    </script>
+</body>
+
+</html>

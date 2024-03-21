@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Carousel Project</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <style>
+      * {
+        margin: 0px;
+        padding: 0px;
+        box-sizing: border-box;
+      }
+
+      .container {
+        border: 2px solid black;
+        width: 70%;
+        margin: auto;
+        height: 70vh;
+        position: relative;
+        overflow: hidden;
+      }
+
+      img {
+        height: 100%;
+        width: 100%;
+        position: absolute;
+        transition: all 2s ease-in-out;
+      }
+
+      .button {
+        margin-left: 40rem;
+        margin-top: 1rem;
+      }
+
+      button {
+        padding: 10px;
+      }
+
+      #left{
+
+        position: absolute;
+        top: 50%;
+        left: 2%;
+        font-size: 25px;
+        background-color: black;
+        color: white;
+        padding: 10px 15px;
+        border-radius: 50px;
+        cursor: pointer;
+      }
+
+      #right{
+
+        position: absolute;
+        right: 2%;
+        top: 50%;
+        font-size: 25px;
+        background-color: black;
+        color: white;
+        padding: 10px 15px;
+        border-radius: 50px;
+        cursor: pointer;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <img
+        src="https://images.unsplash.com/photo-1682686578023-dc680e7a3aeb?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDF8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+        alt=""
+      />
+      <img
+        src="https://images.unsplash.com/photo-1682687982183-c2937a74257c?q=80&w=2071&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDF8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+        alt=""
+      />
+      <img
+        src="https://images.unsplash.com/photo-1705350836117-e117aa1d315b?q=80&w=2071&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+        alt=""
+      />
+      <img
+        src="https://images.unsplash.com/photo-1683009427590-dd987135e66c?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDF8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+        alt=""
+      />
+      <i class="fa-solid fa-angle-left" id="left"></i>
+      <i class="fa-solid fa-angle-right" id="right"></i>
+    </div>
+ 
+    </div>
+
+    <script>
+      let images = document.querySelectorAll("img");
+      images.forEach((i,index)=>{
+
+        i.style.left = `${index*100}%`
+
+        // console.log(i)
+        // console.log(index*100)
+
+      })
+    
+      let counter = 1;
+      let counter2 = 0;
+      console.log(images);
+      document.querySelector("#left").onclick = function () {
+          counter2--;
+          images.forEach((i) => {
+              i.style.transform = `translateX(-${counter2 * 100}%)`;
+              counter = counter2
+        });
+
+      };
+      document.querySelector("#right").onclick = function () {
+            if(counter <images.length){
+            images.forEach((i) => {
+              i.style.transform = `translateX(-${counter * 100}%)`;
+              counter2 = counter
+            });
+        }
+            counter++;
+          };
+
+    //   setInterval(()=>{
+
+
+    //         if(counter <images.length){
+    //         images.forEach((i) => {
+    //           i.style.transform = `translateX(-${counter * 100}%)`;
+    //           counter2 = counter
+    //         })
+    //     }
+    //     else{
+            
+    //           counter = 0;
+    //     }
+    //     counter++;
+         
+    //   },2000)
+
+
+    </script>
+  </body>
+</html>
